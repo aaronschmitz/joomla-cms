@@ -71,12 +71,12 @@ class JMenuSite extends JMenu
 
 			parse_str($url, $item->query);
 
-			$sections = array();
-			foreach(explode('/', $item->route) as $section)
+			$segments = array();
+			foreach(explode('/', $item->route) as $segment)
 			{
-				$sections[] = urlencode($section);
+				$segments[] = urlencode($segment);
 			}
-			$item->route = implode('/', $sections);
+			$item->route = implode('/', $segments);
 
 			$item->alias = urlencode($item->alias);
 		}

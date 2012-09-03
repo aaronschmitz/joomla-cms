@@ -312,12 +312,12 @@ class JCategories
 
 				$result->alias = urlencode($result->alias);
 
-				$sections = array();
-				foreach(explode(':', $result->slug) as $section)
+				$segments = array();
+				foreach(explode(':', $result->slug) as $segment)
 				{
-					$sections[] = urlencode($section);
+					$segments[] = urlencode($segment);
 				}
-				$result->slug = implode(':', $sections);
+				$result->slug = implode(':', $segments);
 
 				// Create the node
 				if (!isset($this->_nodes[$result->id]))
