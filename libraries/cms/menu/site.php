@@ -70,6 +70,15 @@ class JMenuSite extends JMenu
 			$url = str_replace('&amp;', '&', $url);
 
 			parse_str($url, $item->query);
+
+			$sections = array();
+			foreach(explode('/', $item->route) as $section)
+			{
+				$sections[] = urlencode($section);
+			}
+			$item->route = implode('/', $sections);
+
+			$item->alias = urlencode($item->alias);
 		}
 	}
 

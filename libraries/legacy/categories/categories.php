@@ -310,6 +310,15 @@ class JCategories
 					$result->parent_id = 'root';
 				}
 
+				$result->alias = urlencode($result->alias);
+
+				$sections = array();
+				foreach(explode(':', $result->slug) as $section)
+				{
+					$sections[] = urlencode($section);
+				}
+				$result->slug = implode(':', $sections);
+
 				// Create the node
 				if (!isset($this->_nodes[$result->id]))
 				{

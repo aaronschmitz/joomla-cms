@@ -273,7 +273,7 @@ class JRouterSite extends JRouter
 
 				// Get the length of the route
 				$length = strlen($item->route);
-				if ($length > 0 && JString::strpos($route_lowercase . '/', $item->route . '/') === 0
+				if ($length > 0 && JString::strpos($route_lowercase . '/', JString::strtolower($item->route) . '/') === 0
 					&& $item->type != 'menulink' && (!$app->getLanguageFilter() || $item->language == '*'
 					|| $item->language == $lang_tag))
 				{
